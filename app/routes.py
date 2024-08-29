@@ -3,7 +3,6 @@ Defines API routes of the App.
 """
 
 from flask import request, jsonify, Blueprint
-from app import app, db
 from app.models import Post, Comment, User
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
@@ -36,9 +35,6 @@ def create_post():
         content=data.get('content'),
         user_id=current_user_id
     )
-
-    db.session.add(new_post)
-    db.session.commit()
 
     return jsonify({"msg": "Post created successfully"}), 201
 

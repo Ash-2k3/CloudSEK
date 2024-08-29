@@ -12,9 +12,6 @@ from flask_jwt_extended import JWTManager
 db = SQLAlchemy() # SQLAlchemy instance for database interactions
 jwt = JWTManager() # JWTManager instance for handling JSON Web Tokens (JWT)
 
-from app.models import User, Post, Comment
-from app.routes import bp as routes_bp
-
 
 def create_app(config_class=Config):
     """
@@ -34,6 +31,8 @@ def create_app(config_class=Config):
     jwt.init_app(app)
 
     # Register blueprints for routes
+    from app.models import User, Post, Comment
+    from app.routes import bp as routes_bp
     app.register_blueprint(routes_bp)
 
     # Create database tables if they don't exist
