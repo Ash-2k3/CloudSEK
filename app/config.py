@@ -1,3 +1,7 @@
+"""
+Configurations for App.
+"""
+
 class Config:
     """
     Configuration class for setting up the app's configurations.
