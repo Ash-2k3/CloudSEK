@@ -27,8 +27,6 @@ populate_datastore_with_sample_data.py # Script to populate database with sample
 run.py # Script to start the server
 .gitignore # Git ignore file
 ```
-markdown
-Copy code
 
 ## Installation
 
