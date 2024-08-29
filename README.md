@@ -87,12 +87,15 @@ Here’s a quick overview of the available endpoints:
 
 ## How to Test
 
-To test the endpoints, you can use tools like [Postman](https://www.postman.com/) to make API requests. Import the provided Postman collection or manually set up the requests using the information above.
+To test the endpoints, you can use tools like [Postman](https://www.postman.com/) to make API requests.
 
-You can also watch the following videos for a demonstration of how to test the API endpoints using Postman:
-- [Video 1: Testing Registration and Login](#)
-- [Video 2: Testing Post Creation and Retrieval](#)
-- [Video 3: Testing Comment Creation](#)
+You can also watch the following videos for a demonstration in which I have tested the API endpoints using Postman:
+- [Video 1: Testing User Registration](https://github.com/Ash-2k3/CloudSEK/blob/main/screen-recordings/Register%20API.mp4)
+- [Video 2: Testing User Login](https://github.com/Ash-2k3/CloudSEK/blob/main/screen-recordings/Login%20API.mp4)
+- [Video 3: Testing Post Creation](https://github.com/Ash-2k3/CloudSEK/blob/main/screen-recordings/Create%20Post%20API.mp4)
+- [Video 4: Testing Post Retrieval - By IDs & All](https://github.com/Ash-2k3/CloudSEK/blob/main/screen-recordings/Get%20Posts%20API.mp4)
+- [Video 5: Creating Comments](https://github.com/Ash-2k3/CloudSEK/blob/main/screen-recordings/Create%20Comment%20API.mp4)
+- [Video 6: Populating Dummy Data](https://github.com/Ash-2k3/CloudSEK/blob/main/screen-recordings/Populating-Dummy-Data-Script.mp4)
 
 ## Acknowledgements
 
