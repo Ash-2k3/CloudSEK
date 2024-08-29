@@ -1,3 +1,7 @@
+"""
+Defines API routes of the App.
+"""
+
 from flask import request, jsonify, Blueprint
 from app import app, db
 from app.models import Post, Comment, User
@@ -8,11 +12,17 @@ bp = Blueprint('routes', __name__)
 
 @bp.route('/')
 def index_page():
-           return 'Hello World'
+    return 'Hello World'
 
 @bp.route('/posts', methods=['POST'])
 @jwt_required()
 def create_post():
+    """
+    Create a new post with the provided data. Requires authentication.
+
+    Returns:
+        Response: JSON response indicating the success or failure of the post creation.
+    """
     current_user_id = get_jwt_identity()
     data = request.get_json()
 
@@ -35,6 +45,15 @@ def create_post():
 @bp.route('/posts', methods=['GET'])
 @bp.route('/posts/<int:post_id>', methods=['GET'])
 def get_post(post_id = None):
+    """
+    Retrieve posts. If a post ID is provided, retrieve that specific post; otherwise, retrieve all posts.
+
+    Args:
+        post_id (Optional[int]): The ID of the post to retrieve. If None, retrieve all posts.
+
+    Returns:
+        Response: JSON response containing the post(s) data.
+    """
     if not post_id:
         posts = Post.get_all_posts()
         return jsonify([
@@ -66,6 +85,12 @@ def get_post(post_id = None):
 @bp.route('/posts/<int:post_id>/comments', methods=['POST'])
 @jwt_required()
 def create_comment(post_id):
+    """
+    Create a new comment for the specified post. Requires authentication.
+
+    Returns:
+        Response: JSON response indicating the success or failure of the comment creation.
+    """
     user_id = get_jwt_identity()
     data = request.get_json()
 
@@ -85,6 +110,12 @@ def create_comment(post_id):
 
 @bp.route('/register', methods=['POST'])
 def register():
+    """
+    Register a new user with the provided username and password.
+
+    Returns:
+        Response: JSON response indicating the success or failure of the user registration.
+    """
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
@@ -104,6 +135,12 @@ def register():
 
 @bp.route('/login', methods=['POST'])
 def login():
+    """
+    Authenticate a user and return an access token.
+
+    Returns:
+        Response: JSON response containing the access token or an error message.
+    """
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
