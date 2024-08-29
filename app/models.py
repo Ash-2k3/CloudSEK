@@ -11,13 +11,13 @@ from typing import List
 class User(db.Model):
     """
     User model represents a registered user in the system.
-    
+
     Attributes:
         id (int): User id of the user;
             Primary key, unique identifier for each user.
         username (str): Unique username of the user.
         password_hash (str): Hashed password for secure authentication.
-        
+
     Relationships:
         posts: One-to-many relationship with the Post model to link  users to their posts.
         comments: One-to-many relationship with the Comment model tio link users to their comments.
@@ -55,11 +55,11 @@ class User(db.Model):
     def create_user(username: str, password: str) -> "User":
         """
         Create and save a new user with the given username and password.
-        
+
         Args:
             username (str): The username for the new user.
             password (str): The password for the new user.
-            
+
         Returns:
             User: The newly created user object.
         """
